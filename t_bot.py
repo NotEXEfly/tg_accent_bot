@@ -23,11 +23,13 @@ def lalala(message):
         bot.send_message(message.chat.id, 'Слишком большой текст')
 
     # logs
-    print('Querry: ', message.chat.id)
+    print('Querry: {} chat_id: {}'.format(message.from_user.username, message.chat.id))
 
-    log = '***log*** user: {}|| Message: {}'.format(
-        message.chat.id, message.text)
-    bot.send_message(93260961, log)
+    log = '*\|LOG*' + '\n'
+    log += '*\|username*: ' + message.from_user.username + '\n'
+    log += '*\|name*: ' + message.from_user.first_name + ' ' + message.from_user.last_name + '\n'
+    log += '*\|_Message:_*\n' + message.text
+    bot.send_message(93260961, log, parse_mode='MarkdownV2')
 
 
 def get_result(message):
