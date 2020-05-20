@@ -26,9 +26,9 @@ def lalala(message):
     print('Querry: {} chat_id: {}'.format(message.from_user.username, message.chat.id))
 
     log = '*\|LOG*' + '\n'
-    log += '*\|username*: ' + message.from_user.username + '\n'
-    log += '*\|name*: ' + message.from_user.first_name + ' ' + message.from_user.last_name + '\n'
-    log += '*\|_Message:_*\n' + message.text
+    log += '*\|username*: ' + str(message.from_user.username) + '\n'
+    log += '*\|name*: ' + str(message.from_user.first_name) + ' ' + str(message.from_user.last_name) + '\n'
+    log += '*\|_Message:_*\n' + str(message.text)
     bot.send_message(93260961, log, parse_mode='MarkdownV2')
 
 

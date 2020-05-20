@@ -20,12 +20,16 @@ class Accent():
                'Я': 'я́', }
 
     def __create_accent_arr(self, clear_data):
+        counter = 0
         data = []
         for word in clear_data:
             if len(word) < 4:
                 continue
+            if counter == len(clear_data) // 2:
+                sleep(0.5)
             web_str = self.__get_web_str(word)
             data.append([web_str, self.__status_word])
+            counter += 1
         return data
 
     # get from web solo word
